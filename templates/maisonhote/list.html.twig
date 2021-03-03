@@ -1,0 +1,63 @@
+<h1> Liste des maisons d'hotes </h1>
+
+<table border ="1">
+<tr>
+   
+    <th scope="row">Nom</th>
+     <th scope="row">Adresse</th>
+      <th scope="row">num</th>
+       <th scope="row">prix</th>
+        <th scope="row">Note</th>
+         <th scope="row">Image</th>
+</tr>
+    {% for maisonhote in maisonhotes %}
+<tr>
+   
+ 
+
+   <td>
+
+{{ maisonhote.nom }}
+
+   </td>
+
+    <td>
+   {{ maisonhote.adresse }}
+
+   </td>
+
+   <td>
+
+{{ maisonhote.num }}
+
+   </td>
+
+   <td>
+{{ maisonhote.prix }}
+
+   </td>
+   
+   <td>
+
+{{ maisonhote.note }}
+
+   </td>
+
+   <td>
+
+{{ maisonhote.image }}
+
+   </td>
+
+    <td>
+<a href="{{ path('updateMaisonhote', {'id': maisonhote.id})}}"> modifier</a>
+  
+<a href="{{ path('deleteMaisonhote', {'id': maisonhote.id}) }}"> supprimer </a>
+
+</td>
+</tr>
+{% endfor %}
+</table>
+<div style="margin-left:50px;">
+<a href="{{path('newmaisonhote')}}"> Ajouter maison d'hote </a>
+</div>

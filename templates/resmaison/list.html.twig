@@ -1,0 +1,38 @@
+<h1> Liste des maisons d'hotes </h1>
+
+<table border ="1">
+<tr>
+   
+    <th scope="row">Date d'entrée</th>
+     <th scope="row">Date de sortie</th>
+      
+</tr>
+    {% for resmaison in resmaisons %}
+<tr>
+   
+ 
+
+   <td>
+
+{{ resmaison.dateentre }}
+
+   </td>
+
+    <td>
+   {{ resmaison.datesortie }}
+
+   </td>
+
+
+    <td>
+<a href="{{ path('updateResmaison', {'id': resmaison.id})}}"> modifier </a>
+  
+<a href="{{ path('deleteResmaison', {'id': resmaison.id}) }}"> supprimer </a>
+
+</td>
+</tr>
+{% endfor %}
+</table>
+<div style="margin-left:50px;">
+<a href="{{path('newresmaison')}}"> Ajouter réservation </a>
+</div>
